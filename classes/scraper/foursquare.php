@@ -1,12 +1,11 @@
 <?php
 
 // EXAMPLE
-
 /*
 $photos = array();
 
 $fs = new foursquare();
-$v = $fs->search_venue('40.7,-74', 'slate');
+$v = $fs->search_venue('40.7,-74', 'slate', 1);
 foreach ($v as $venue) {
     $a = $fs->get_photos($venue['id']);
     if (count($a)) {
@@ -18,7 +17,6 @@ foreach ($v as $venue) {
 
 var_dump($photos);
 */
-
 
 class foursquare {
 
@@ -41,6 +39,7 @@ class foursquare {
         return $ret['response']['groups'][0]['items'];
     }
     
+    /*
     public function get_photos($venue_id, $group = 'venue') {
         $params = array(
             'client_id' => self::API_CLIENT_ID,
@@ -58,6 +57,28 @@ class foursquare {
         }
 
         return $r;
+    }
+    */
+
+    public function get_photos($venue_id) {
+        $params = array(
+            'client_id' => self::API_CLIENT_ID,
+            'client_secret' => self::API_CLIENT_SECRET,
+            'requests' => "/venues/$venue_id/photos?group=venue,/venues/$venue_id/photos?group=checkin",
+        );
+
+        $ret = $this->_curl("/venues/$venue_id/photos", $params, 'GET');
+        $ret = json_decode($ret, 1);
+        $photos = $ret['response']['photos']['groups'];
+        $r = array();
+        foreach ($photos as $group) {
+            foreach ($group['items'] as $c) {
+                $r[] = $c['url'];
+            }
+        }
+
+        return $r;
+
     }
 
     public function _curl($url, $parameters, $method = 'GET') {
