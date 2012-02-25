@@ -1,4 +1,12 @@
-<?php require '../classes/reporter.php'; 
+<?php
+
+if ($v = $_REQUEST['v']) {
+    $pics = unserialize(urldecode($v));
+} else {
+    header('Location: /search.php');
+}
+
+require '../classes/reporter.php'; 
 
 function pie_chart($title, $slices, $container = 'container') {
     $data = array();
