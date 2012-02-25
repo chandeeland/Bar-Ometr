@@ -35,7 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 define ("API_SERVER", "http://api.face.com/");
-define ("API_DEBUG", true);
+define ("API_DEBUG", false);
 
 if (!function_exists('curl_init'))  throw new Exception('Face.com API Client Library requires the CURL PHP extension.');
 if (!function_exists('json_decode')) throw new Exception('Face.com API Client Library requires the JSON PHP extension.');
@@ -121,6 +121,7 @@ class FaceRestClient
 			
 		return $this->call_method("faces/detect", 
 								  array("urls" => $urls ,
+                                        "attributes" => 'all',
 								  		"owner_ids" => $ownerIds,
 								  		"_file" =>  '@'.$filename,
 								  		"callback_url" => $callbackUrl,
@@ -288,9 +289,12 @@ class FaceRestClient
     		
     	if (!empty($this->password))
     		$authParams['password'] = $this->password;	
+
 		
     	// Keep th auth keys first
     	$params = array_merge($authParams, $params);    	    	
+
+
     	$paramsQS = http_build_query($params);    	    	
     	    
     	$request = "$method.$this->format";

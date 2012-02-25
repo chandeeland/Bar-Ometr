@@ -1,7 +1,7 @@
 <?php
 
 class scraper_test 
-(
+{
 	public function getImages() {
 		return array(
 		    'http://2.bp.blogspot.com/_wZEAk9N57Wc/TPcRY6nFP1I/AAAAAAAAAA4/FNK7h_9e_KA/s1600/people-at-a-bar.jpg',
@@ -11,4 +11,4 @@ class scraper_test
             'http://www.ayanohisaphoto.com/blog/wp-content/uploads/2010/11/0078-dancing-young-people-down-town-bar.jpg',
 		);
 	}
-)
+}
