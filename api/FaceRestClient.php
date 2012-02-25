@@ -35,7 +35,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 define ("API_SERVER", "http://api.face.com/");
-define ("API_DEBUG", false);
+define ("API_DEBUG", true);
 
 if (!function_exists('curl_init'))  throw new Exception('Face.com API Client Library requires the CURL PHP extension.');
 if (!function_exists('json_decode')) throw new Exception('Face.com API Client Library requires the JSON PHP extension.');
