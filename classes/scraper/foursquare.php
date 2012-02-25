@@ -67,13 +67,17 @@ class foursquare {
             'requests' => "/venues/$venue_id/photos?group=venue,/venues/$venue_id/photos?group=checkin",
         );
 
+        $r = array();
         $ret = $this->_curl("/venues/$venue_id/photos", $params, 'GET');
         $ret = json_decode($ret, 1);
-        $photos = $ret['response']['photos']['groups'];
-        $r = array();
-        foreach ($photos as $group) {
-            foreach ($group['items'] as $c) {
-                $r[] = $c['url'];
+        if (array_key_exists('response', $ret) && array_key_exists('photos', $ret['response']) && array_key_exists('groups', $ret['response']['photos'])) {
+            $photos = $ret['response']['photos']['groups'];
+            foreach ($photos as $group) {
+                if (array_key_exists('items', $group)) {
+                    foreach ($group['items'] as $c) {
+                        $r[] = $c['url'];
+                    }
+                }
             }
         }
 
