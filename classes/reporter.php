@@ -5,10 +5,6 @@ require('scraper/foursquare.php');
 
 
 $face = new FaceRestClient('67afa8236381726623decc8f17e909dc','74b08f0899251135728e83bd172135e8');
-$scrape = new foursquare();
-$venue = $scrape->search_venue('40.7,-74', 'slate', 1);
-$pics = $scrape->get_photos($venue[0]['id']);
-
 $info = $face->faces_detect($pics);
 
 $population = 0;
