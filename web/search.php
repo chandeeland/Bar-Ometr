@@ -9,7 +9,7 @@
 <?php
 require('../classes/scraper/foursquare.php');
 
-if ($q = $_REQUEST['q']) {
+if (isset($_REQUEST['q']) && $q = $_REQUEST['q']) {
     $scrape = new foursquare();
     $venues = $scrape->search_venue('40.7,-74', $_REQUEST['q'], 10);
 

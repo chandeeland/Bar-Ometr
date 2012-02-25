@@ -11,33 +11,46 @@ class venue {
     public $fem = 0;
     public $nerds =0;
 
+    public function getMood() {
+        $total = array_sum($this->mood);
+        foreach ($this->mood as $k => $m) {
+            $mood_percent[$k] = round($m/$total,2);
+        }
+        return $mood_percent;
+    }
+
     public function getRatio() {
-        return $women / ($men + $women);
+        return round($this->women / ($this->men + $this->women),2);
     }
 
     public function getManly() {
-        return $masculinity / $men;
+        return round($this->masculinity / $this->men / 100,2);
     }
     
     public function getGirly() {
-        return $fem / $women;
+        return round($this->fem / $this->women / 100,2);
     }
 
     public function getNerdly() {
-        $nerd_ratio = $nerds / $population;
+        return round($this->nerds / $this->population,2);
     }
 
     public function stats() {
+        echo '<li>POPULATION : ' . $this->population;
         echo '<li>RATIO :' .$this->getRatio();
         echo '<li>MANLY :' .$this->getManly();
         echo '<li>GIRLY :' .$this->getGirly();
         echo '<li>NERDLY :' .$this->getNerdly();
     }
 
-    public function badges() {
+    public function getBadges() {
+        $pm = $this->getMood();
         $badges = array();
-        if ($this->getRatio() < .4) {
+        if ($this->getRatio() < 0.5) {
             $badges[] = 'Sausage Fest';
+            if ($pm['sad'] + $pm['surprised'] > 0.50) {
+                $badges[] = 'Lots of sadness, lots of surprise, are these guys coding?';
+            }
         } else if ($this->getRatio() > 6) {
             $badges[] = 'Ladies Night';
         }
@@ -45,6 +58,7 @@ class venue {
         if ($this->getManly() < .5 && $this->getNerdly() > .5) {
             $badges[] = 'Hipster Central';
         }
+    
 
         return $badges;
     }
@@ -78,7 +92,7 @@ foreach ($info->photos as $photo) {
 
         // mood
         if (isset($tag->attributes->mood)) {
-            if (array_key_exists($tag->attributes->mood->value, $mood)) {
+            if (array_key_exists($tag->attributes->mood->value, $report->mood)) {
                 $report->mood[$tag->attributes->mood->value]++;
             } else {
                 $report->mood[$tag->attributes->mood->value] = 1;
