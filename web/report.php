@@ -77,12 +77,16 @@ echo pie_chart('Gender Ratio', array('Men'=> $men, 'Women' => $women, '???'=> ($
 	<body>
 <script type="text/javascript" src="js/highcharts.js"></script>
 <script type="text/javascript" src="js/modules/exporting.js"></script>
-
+<?php 
+$report->stats();
+foreach ($report->getBadges() as $b) {
+    echo '<li>' . $b;
+}
+?>
 <div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
 <div id="container2" style="width: 800px; height: 400px; margin: 0 auto"></div>
 
 <?php foreach ($pics as $p) {
-
     echo "<img src=\"$p\">\n";
 }?>
 	</body>
