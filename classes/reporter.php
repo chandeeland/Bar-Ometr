@@ -131,7 +131,7 @@ class venue {
             $badges[] = 'Warning! Hipster Central';
         }
         
-        if ($pm['angry'] + $pm['happy']) > 0.5) {
+        if (($pm['angry'] + $pm['happy']) > 0.5) {
             $badges[] = 'High levels of of excitement here, watching sports?';
         }
 
