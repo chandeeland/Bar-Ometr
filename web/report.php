@@ -155,6 +155,30 @@ function pie_chart($title, $slices, $container = 'container') {
 	</script> 
     <script type="text/javascript" src="js/highcharts.js"></script>
     <script type="text/javascript" src="js/modules/exporting.js"></script>
+  <!-- Load Feather code -->
+<script type="text/javascript" src="http://feather.aviary.com/js/feather.js"></script>
+
+<!-- Instantiate Feather -->
+<script type="text/javascript">
+        var featherEditor = new Aviary.Feather({
+            apiKey: '8d705e3f1',
+            apiVersion: 2,
+            tools: 'all',
+            appendTo: '',
+            onSave: function(imageID, newURL) {
+                var img = document.getElementById(imageID);
+                img.src = newURL;
+            }
+        });
+
+        function launchEditor(id, src) {
+            featherEditor.launch({
+                image: id,
+                url: src
+            });
+            return false;
+        }
+</script>
 </head>
 
 
@@ -191,7 +215,11 @@ function pie_chart($title, $slices, $container = 'container') {
 				}
 				?>
 			</section>
-			
+	
+            <section>
+                <div id="injection_site"></div>
+            </section>
+
 			<!-- section id="people">
 				<?php foreach ($report->people as $k => $group) : ?>
 					<?php $max = 0; $max_i = 0; ?>
@@ -215,7 +243,11 @@ function pie_chart($title, $slices, $container = 'container') {
                 <div id="container2"></div>
                 <?php foreach ($pics as $k=>$p) : ?>
 				<article class="item">
-					<a href="/detail.php?i=<?= $k; ?>"><img src="<?= $p; ?>" alt="" /></a>
+					<a href="/detail.php?i=<?= $k; ?>"><img id="img<?= $k?>" src="<?= $p; ?>" alt="" /></a>
+
+<!-- Add an edit button, passing the HTML id of the image and the public URL ot the image -->
+<p><input type="image" src="http://advanced.aviary.com/images/feather/edit-photo.png" 
+value="Edit photo" onclick="return launchEditor('<?= "img$k"; ?>', '<?= $p; ?>');" /></p>  
 				</article>
                 <?php endforeach; ?>
 			</div>
