@@ -70,12 +70,12 @@
 		
 		
 		<section id="what-we-do">
-			<h2>Header 2</h2>
-			<p>THis is where we will get people to buy in to input a location</p>
+			<h2>What's The Mood</h2>
+			<p>Get a taste of what the vibe is at your next desitination to prevent a shitty outting.</p>
 		
 			<form class="find" method="post" action="/index.php">
 				<label for="findALocation">Find a Location's mood</label>
-				<input name="q" id="findALocation" placeholder="Search a location's mood" />
+				<input name="q" id="findALocation" placeholder="" />
 				<input class="button" type="submit" value="Go" />
 			</form>
 		</section>
