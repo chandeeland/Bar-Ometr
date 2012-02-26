@@ -11,15 +11,16 @@ if (array_key_exists('v', $_REQUEST)) {
     $face = new FaceRestClient('67afa8236381726623decc8f17e909dc','74b08f0899251135728e83bd172135e8');
     $info = $face->faces_group($pics);
     
-    if (count($info) == 0) header('Location: /empty.php');
-
+    $count_people = 0;
     foreach ($info->photos as $photo) {
         $report->population += count($photo->tags);
         foreach ($photo->tags as $tag) {
             $tag->url = $photo->url;
             $report->addPerson(new Person($tag), $tag->gid);
+            $count_people++;
         }
     }
+    if (!$count_people) { header('Location: empty.php'); }
     
     $_SESSION['pics'] = $pics;
     $_SESSION['report'] = $report;
