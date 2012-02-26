@@ -228,7 +228,7 @@ img {border: 1px solid #ccc; border-radius: 5px; width: 100%; display: block; ma
 footer {position: absolute; bottom: 0;}
 
 footer p {
-	position: absolute; bottom: 0; padding: 10px;
+	position: padding: 10px;
 }
 
 .powered-by {position: relative; float: right;}
