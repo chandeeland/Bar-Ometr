@@ -42,9 +42,11 @@ if (array_key_exists('v', $_REQUEST)) {
 function pie_chart($title, $slices, $container = 'container') {
     $data = array();
     foreach ($slices as $k=>$v) {
-        $data[] = "['{$k}', $v]";   
+        if ($v > 0) {
+            $data[] = "['{$k}', $v]";   
+        }
     }
-    if (count($data) == 0) return '';
+    if (empty($data)) return '';
 
     return "
     $(document).ready(function() {
