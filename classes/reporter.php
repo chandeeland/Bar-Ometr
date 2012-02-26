@@ -1,38 +1,7 @@
 <?php
 require('../api/FaceRestClient.php');
 require('scraper/foursquare.php');
-
-
-class Person {
-    public $gender = null;
-    public $glasses = false;
-    public $mood = null;
-
-    public function __construct($info) {
-        // count gender
-        if (isset($info->gender)) {
-            if ($info->gender->value == 'male') {
-                $this->gender = 'male';
-                $this->gender_c = $info->gender->confidence;
-            } else {
-                $this->gender = 'female';
-                $this->gender_c = $info->gender->confidence;
-            }
-        }
-
-        // nerdiness
-        if (isset($info->glasses)) {
-            if ($info->glasses->value) {
-                $this->glasses = true;
-            }
-        }
-
-        // mood
-        if (!empty($info->mood)) {
-            $this->mood = $info->mood->value;
-        }
-    }
-}
+require('people.php');
 
 class venue {
     public $people = array();
@@ -46,16 +15,21 @@ class venue {
 
     private $glasses = null;
 
-    public function addPerson(Person $p) {
-        $this->people[] = $p;
+    public function addPerson(Person $p, $gid) {
+        static $i = 0;
+        if (empty($gid)) $gid = 'DEFAULT' . $i++;
+        echo $gid;
+        $this->people[$gid][] = $p;
     }
+
 
 
     public function countWomen() {
         if (is_null($this->women)) {
             $this->women = 0;
             $this->men = 0;
-            foreach ($this->people as $p) {
+            foreach ($this->people as $group) {
+                $p = array_shift($group);
                 if ($p->gender == 'female') {
                     $this->women++;
                     $this->women_c += $p->gender_c;
@@ -97,7 +71,8 @@ class venue {
     public function getNerdly() {
         if (is_null($this->glasses)) {
             $glasses = 0;
-            foreach ($this->people as $p) {
+            foreach ($this->people as $group) {
+                $p = array_shift($group);
                 if ($p->glasses) {
                     $glasses++;
                 }
@@ -112,16 +87,17 @@ class venue {
         $moods = array();
         $mood_percent = array();
         $total = 0;
-
-        foreach ($this->people as $p) {
-            if (!empty($p->mood)) {
-                if (array_key_exists($p->mood, $moods)) {
-                    $moods[$p->mood]++;
-                } else {
-                    $moods[$p->mood] = 1;
-                }
+        foreach ($this->people as $group) {
+            foreach ($group as $p) {
+                if (!empty($p->mood)) {
+                    if (array_key_exists($p->mood, $moods)) {
+                        $moods[$p->mood]++;
+                    } else {
+                        $moods[$p->mood] = 1;
+                    }
             
-                $total++;
+                    $total++;
+                }
             }
         }
 
