@@ -215,7 +215,9 @@ article {background: #fff; border: solid 2px #CCC; border-radius: 5px; box-shado
 
 article a {transition: opacity 0.25s ease-in; -webkit-transition: opacity 0.25s ease-in; -moz-transition: opacity 0.25s ease-in;}
 	
-	
+#badges .badge-icons img {
+	height: 75px;
+}
 
 article a:hover,
 article a:focus {

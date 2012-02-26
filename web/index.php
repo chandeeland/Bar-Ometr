@@ -70,7 +70,7 @@
 		
 		
 		<section id="what-we-do">
-			<h2>What's The Mood?</h2>
+			<h2>What's The Mood</h2>
 			<p>Get a taste of what the vibe is at your next destination to prevent a shitty outting.</p>
 		
 			<form class="find" method="post" action="/index.php">
