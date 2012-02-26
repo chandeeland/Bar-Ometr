@@ -111,10 +111,6 @@ function pie_chart($title, $slices, $container = 'container') {
 	
 	<!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
-	<style>
-	  body{  /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="css/base.css" media="screen, handheld" />
@@ -203,8 +199,8 @@ function pie_chart($title, $slices, $container = 'container') {
 
 		<section id="results-container" class="clearfix">
 			<div id="results">
-                <div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
-                <div id="container2" style="width: 800px; height: 400px; margin: 0 auto"></div>
+                <div id="container"></div>
+                <div id="container2"></div>
                 <?php foreach ($pics as $k=>$p) : ?>
 				<article class="item">
 					<a href="/detail.php?i=<?= $k; ?>"><img src="<?= $p; ?>" alt="" /></a>
@@ -220,75 +216,6 @@ function pie_chart($title, $slices, $container = 'container') {
 	</div>
 	
 	<!-- JavaScript at the bottom for fast page loading -->
-	
-	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-	<!-- Masonry -->
-	<script src="masonry.js"></script>
-	<script>
-  $(function(){
-    
-    var $container = $('#results-container');
-    
-    $('#results').masonry({
-      columnWidth: 350
-    });
-    
-    $container.masonry({
-      itemSelector: '.item',
-      columnWidth: 340,
-      isAnimated: !Modernizr.csstransitions
-    });
-    
-    // Sites using Masonry markup
-    var $sites = $('#sites'),
-        $loadingItem = $container.find('.loading');
-        
-    var ajaxError = function(){
-      $loadingItem.text('Could not load examples :(');
-    };
-    
-    // dynamically load sites using Masonry from Zootool
-    $.getJSON('http://zootool.com/api/users/items/?username=desandro' +
-        '&apikey=8b604e5d4841c2cd976241dd90d319d7' +
-        '&tag=bestofmasonry&callback=?')
-      .error( ajaxError )
-      .success(function( data ){
-        
-        // proceed only if we have data
-        if ( !data || !data.length ) {
-          ajaxError();
-          return;
-        }
-        var items = [],
-            item, datum;
-        
-        for ( var i=0, len = data.length; i < len; i++ ) {
-          datum = data[i];
-          item = '<div class="item example"><a href="' + datum.url + '">'
-            + '<img src="' + datum.image.replace('/l.', '/m.') + '" />'
-            + '<b>' + datum.title + '</b>'
-            + '</a></div>';
-          items.push( item );
-        }
-        
-        var $items = $( items.join('') );
-        $items.imagesLoaded(function(){
-          $container
-            .masonry( 'remove', $loadingItem ).masonry()
-            .append( $items ).masonry( 'appended', $items, true );
-        });
-        
-      });
-    
-  });
-</script>
-	
-	
-	<!-- Charting -->
-	<script src=""></script>
-
 	
 
 </body>

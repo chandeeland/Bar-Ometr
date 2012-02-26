@@ -45,8 +45,9 @@
 		<link rel="stylesheet" type="text/css" href="css/tweaks-WP7.css" media="all" />
 	<![endif]-->
 
-	<script src="../html/js/libs/modernizr-2.5.0.min.js"></script>
-  
+	<script src="js/libs/modernizr-2.5.0.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript">  
 </head>
 
 
@@ -59,6 +60,11 @@
 	
 		<header>
 			<h1 class="ir"><a href="">Co Name Here</a></h1>
+			<form class="find">
+				<label class=" visuallyhidden" for="findALocation">Find a Location's mood</label>
+				<input placeholder="Search a location's mood" />
+				<button>Go<!-- icon --></button>
+			</form>
 		</header>
 		
 		
@@ -105,15 +111,8 @@ if (isset($_REQUEST['q']) && $q = $_REQUEST['q']) {
 	
 	<!-- JavaScript at the bottom for fast page loading -->
 	
-	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-	<!-- Masonry -->
-	<script src="../html/masonry.js"></script>
-<script src="../html/js/rspimg.js"></script>
-	
-	<!-- Charting -->
-	<script src=""></script>
+	<script src="../html/js/rspimg.js"></script>
+
 
 	
 

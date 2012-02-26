@@ -116,7 +116,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] { cursor
    Let's start it
    ========================================================================== */
 
-body { 
+body {
   font: 13px 'Helvetica Neue', Arial, sans-serif;
   background: #FDFAF8;
   color: #333;
@@ -170,20 +170,39 @@ strong { font-weight: bold; }
 /*
 / Site Styles 
 */
-header {background: #000; width: 100%; position: relative; padding: 5px 0;}
+body {background: url('../images/trans-noise.png') repeat 0 0;}
 
+
+header {background: #000;  border-bottom: 2px solid #999; height: 70px; width: 100%; position: fixed; padding: 5px 0; z-index: 10;}
 
 h1 a {
 	display: block;
-	background: url('../images/logo-test.png') no-repeat 0 0 #333;
-	height: 100px;
-	margin: 0 10px;
-	width: 320px;
+	background: url('../images/wtm-logo-lg2.png') no-repeat 0 0;
+	height: 154px;
+	margin: 5px 10px 5px 20px;
+-moz-transition: all 1s ease;
+-webkit-transition: all 1s ease;
+-o-transition: all 1s ease;
+transition: all 1s ease;
+	width: 130px;
 }
 	
 h1 a:hover,
 h1 a:active {
+	-webkit-transform: rotate(-51deg);  /* Saf3.1+, Chrome */
+     -moz-transform: rotate(-51deg);  /* FF3.5+ */
+      -ms-transform: rotate(-51deg);  /* IE9 */
+       -o-transform: rotate(-51deg);  /* Opera 10.5 */
+          transform: rotate(-51deg);
 }
+
+#what-we-do {
+	margin: 0;
+    padding: 100px 0;
+    position: relative;
+	text-align: center;}
+	
+#what-we-do h2 {}
 
 article {background: #fff; border: solid 2px #CCC; border-radius: 5px; box-shadow: 0 3px 10px #000; float: left; margin: 2%; padding: 10px; width: 25%; max-width: 300px;}
 
@@ -201,12 +220,16 @@ img {border: 1px solid #ccc; border-radius: 5px; width: 100%; display: block; ma
 
 
 footer p {
-	position: absolute; margin: 10px;
+	position: absolute; padding: 10px;
 }
 
 
 /* Results Page */
-#results-container { position: relative; margin: 0;}
+#results-container {
+    margin: 0;
+    padding: 100px 0;
+    position: relative;
+}
 
 article.box.graph, article.box2.graph {
     float: left;
@@ -218,12 +241,11 @@ article.box.graph, article.box2.graph {
 article .highcharts-container {width: 600px;}
 
 
-#pulled-data {display: inline-block; margin: 15px 2%; border-radius: 5px; background: #333; width: auto; padding: 10px 0;}
+#pulled-data {display: inline-block; margin: 15px 2% 15px 100px; border-radius: 5px; background: #333; width: auto; padding: 10px 0;}
 #pulled-data li {color: #fff; padding: 0 20px; margin: 0; list-style: none; line-height: 1.35;}
 
 #badges {border: 2px solid #eee; border-radius: 5px; display: inline-block; margin: 15px 2%; list-style: none; padding: 10px 20px; font-weight: 600; width: auto;}
 
-header {position: relative;}
 header form.find {position: absolute; right: 20px; top: 20px;}
 header form.find input {border-radius: 5px; font-size: 15px; padding: 8px 15px; color: #666;}
 header form.find input:focus {box-shadow: 0 1px 3px #CCC;}
@@ -285,9 +307,4 @@ textarea[contenteditable] {-webkit-appearance: none;}
 
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }
-
-/* Contain floats: h5bp.com/q */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
 
