@@ -115,7 +115,7 @@ if (isset($_REQUEST['q']) && $q = $_REQUEST['q']) {
 			<div class="powered-by">
 			
 			<a class="face-link" href="http://face.com/" title="Face Recognition by face.com"></a>
-<a class="foursq-logo" href="http://foursquare.com"></a>
+			<a class="foursq-logo" href="http://foursquare.com" title="Foursquare"></a>
 			
 		</footer>
 		
