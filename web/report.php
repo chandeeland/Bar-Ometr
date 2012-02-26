@@ -44,6 +44,8 @@ function pie_chart($title, $slices, $container = 'container') {
     foreach ($slices as $k=>$v) {
         $data[] = "['{$k}', $v]";   
     }
+    if (count($data) == 0) return '';
+
     return "
     $(document).ready(function() {
 	chart = new Highcharts.Chart({

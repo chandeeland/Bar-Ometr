@@ -131,8 +131,9 @@ class venue {
     public function getBadges() {
         $pm = $this->getMood();
         $badges = array();
-        if ($this->getRatio() < 0.5) {
+        if ($this->getRatio() < 0.5 and count($this->people) > 4) {
             $badges[] = 'Sausage Fest';
+            if (array_key_exists('sad', $pm) && array_key_exists('surprise', $pm))
             if ($pm['sad'] + $pm['surprised'] > 0.50) {
                 $badges[] = 'Lots of sadness, lots of surprise, are these guys coding?';
             }
