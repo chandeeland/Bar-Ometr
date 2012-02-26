@@ -166,39 +166,41 @@ function pie_chart($title, $slices, $container = 'container') {
 			
 		</header>
 
-        <section id="pulled-data">
-    	    <?php $report->stats(); ?>
-        </section>
-
-        <section id="badges">
-            <?php
-            foreach ($report->getBadges() as $b) {
-                echo '<li>' . $b;
-            }
-            ?>
-        </section>
-		
-       <!-- 
-        <section id="people">
-            <?php foreach ($report->people as $k => $group) : ?>
-                <?php $max = 0; $max_i = 0; ?>
-                <?php foreach ($group as $i => $curr) : ?>
-                    <?php if (($curr->bottom - $curr->top) > $max) : ?>
-                        <?php $max = $curr->bottom - $curr->top; $max_i = $i; ?>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            <?php $curr = $report->people[$k][$max_i] ;?>
-
-            <div style="position:relative;height:<?= $curr->bottom - $curr->top; ?>;">
-                <div style="position:absolute;clip:rect(<?= "{$curr->top}px {$curr->bottom}px {$curr->right}px {$curr->left}px";?>);">
-                    <img src="<?= $curr->image_url; ?>" />
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </section>
-        -->
+        
 
 		<section id="results-container" class="clearfix">
+		
+			<section id="pulled-data">
+				<?php $report->stats(); ?>
+			</section>
+	
+			<section id="badges">
+				<?php
+				foreach ($report->getBadges() as $b) {
+					echo '<li>' . $b;
+				}
+				?>
+			</section>
+			
+		   <!-- 
+			<section id="people">
+				<?php foreach ($report->people as $k => $group) : ?>
+					<?php $max = 0; $max_i = 0; ?>
+					<?php foreach ($group as $i => $curr) : ?>
+						<?php if (($curr->bottom - $curr->top) > $max) : ?>
+							<?php $max = $curr->bottom - $curr->top; $max_i = $i; ?>
+						<?php endif; ?>
+					<?php endforeach; ?>
+				<?php $curr = $report->people[$k][$max_i] ;?>
+	
+				<div style="position:relative;height:<?= $curr->bottom - $curr->top; ?>;">
+					<div style="position:absolute;clip:rect(<?= "{$curr->top}px {$curr->bottom}px {$curr->right}px {$curr->left}px";?>);">
+						<img src="<?= $curr->image_url; ?>" />
+					</div>
+				</div>
+				<?php endforeach; ?>
+			</section>
+			-->
 			<div id="results">
                 <div id="container"></div>
                 <div id="container2"></div>
