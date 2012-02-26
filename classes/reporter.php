@@ -130,15 +130,18 @@ class venue {
         if ($this->getManly() < .5 && $this->getNerdly() > .5) {
             $badges[] = 'Warning! Hipster Central';
         }
-        
+ 
+        if (array_key_exists('angry', $pm) && array_key_exists('happy', $pm))
         if (($pm['angry'] + $pm['happy']) > 0.5) {
             $badges[] = 'High levels of of excitement here, watching sports?';
         }
 
+        if (array_key_exists('sad', $pm))
         if ($pm['sad'] > .4) {
             $badges[] = 'Who died?';
         }
 
+        if (array_key_exists('happy', $pm))
         if ($pm['happy'] > .4) {
             $badges[] = 'Happy Happy Joy Joy!';
         }
