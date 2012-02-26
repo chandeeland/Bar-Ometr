@@ -16,6 +16,8 @@ if (array_key_exists('v', $_REQUEST)) {
         $report->population += count($photo->tags);
         foreach ($photo->tags as $tag) {
             $tag->url = $photo->url;
+            $tag->total_height = $photo->height;
+            $tag->total_width = $photo->width;
             $report->addPerson(new Person($tag), $tag->gid);
             $count_people++;
         }
@@ -185,8 +187,7 @@ function pie_chart($title, $slices, $container = 'container') {
 				?>
 			</section>
 			
-		   <!-- 
-			<section id="people">
+			<!-- section id="people">
 				<?php foreach ($report->people as $k => $group) : ?>
 					<?php $max = 0; $max_i = 0; ?>
 					<?php foreach ($group as $i => $curr) : ?>
@@ -202,8 +203,8 @@ function pie_chart($title, $slices, $container = 'container') {
 					</div>
 				</div>
 				<?php endforeach; ?>
-			</section>
-			-->
+			</section -->
+
 			<div id="results">
                 <div id="container"></div>
                 <div id="container2"></div>
