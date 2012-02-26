@@ -1,22 +1,37 @@
 <?php
-if ($v = $_REQUEST['v']) {
+include '../classes/reporter.php'; 
+
+
+session_start();
+if (array_key_exists('v', $_REQUEST)) {
+    $v = $_REQUEST['v'];
     $pics = unserialize(urldecode($v));
-    include '../classes/reporter.php'; 
 
     $report = new Venue();
     $face = new FaceRestClient('67afa8236381726623decc8f17e909dc','74b08f0899251135728e83bd172135e8');
-    $info = $face->faces_detect($pics);
-
+    $info = $face->faces_group($pics);
+    
     foreach ($info->photos as $photo) {
         $report->population += count($photo->tags);
         foreach ($photo->tags as $tag) {
-            $report->addPerson(new Person($tag->attributes));
+            $tag->url = $photo->url;
+            $report->addPerson(new Person($tag), $tag->gid);
         }
     }
+    
+    $_SESSION['pics'] = $pics;
+    $_SESSION['report'] = $report;
+    $_SESSION['qname'] = $_REQUEST['qname'];
+
+} else if (array_key_exists('pics', $_SESSION)) {
+    $pics = $_SESSION['pics'];
+    $report = $_SESSION['report'];
+    $qname = $_SESSION['qname'];
 
 } else {
     header('Location: /search.php');
 }
+
 
 
 function pie_chart($title, $slices, $container = 'container') {
@@ -146,7 +161,7 @@ function pie_chart($title, $slices, $container = 'container') {
  	<div class="row wrapper">
 	
 		<header>
-			<h1 class="ir"><a href=""><?= $_REQUEST['qname']; ?></a></h1>
+			<h1 class="ir"><a href=""><?= $qname; ?></a></h1>
 			<form class="find">
 				<label class=" visuallyhidden" for="findALocation">Find a Location</label>
 				<input placeholder="Search a location" />
@@ -166,17 +181,33 @@ function pie_chart($title, $slices, $container = 'container') {
             ?>
         </section>
 		
+       <!-- 
+        <section id="people">
+            <?php foreach ($report->people as $k => $group) : ?>
+                <?php $max = 0; $max_i = 0; ?>
+                <?php foreach ($group as $i => $curr) : ?>
+                    <?php if (($curr->bottom - $curr->top) > $max) : ?>
+                        <?php $max = $curr->bottom - $curr->top; $max_i = $i; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php $curr = $report->people[$k][$max_i] ;?>
+
+            <div style="position:relative;height:<?= $curr->bottom - $curr->top; ?>;">
+                <div style="position:absolute;clip:rect(<?= "{$curr->top}px {$curr->bottom}px {$curr->right}px {$curr->left}px";?>);">
+                    <img src="<?= $curr->image_url; ?>" />
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </section>
+        -->
+
 		<section id="results-container" class="clearfix">
 			<div id="results">
-                <article class="item">
                 <div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
-	            </article>
-                <article class="item">
                 <div id="container2" style="width: 800px; height: 400px; margin: 0 auto"></div>
-	            </article>
-                <?php foreach ($pics as $p) : ?>
+                <?php foreach ($pics as $k=>$p) : ?>
 				<article class="item">
-					<a href="<?= $p; ?>"><img src="<?= $p; ?>" alt="" /></a>
+					<a href="/detail.php?i=<?= $k; ?>"><img src="<?= $p; ?>" alt="" /></a>
 				</article>
                 <?php endforeach; ?>
 			</div>
