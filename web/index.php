@@ -74,8 +74,8 @@
 			<p>Get a taste of what the vibe is at your next desitination to prevent a shitty outting.</p>
 		
 			<form class="find" method="post" action="/index.php">
-				<label for="findALocation">Find a Location's mood</label>
-				<input name="q" id="findALocation" placeholder="" />
+				<label class="visuallyhidden" for="findALocation">Find a Location's mood</label>
+				<input name="q" id="findALocation" placeholder="Where you heading?" />
 				<input class="button" type="submit" value="Go" />
 			</form>
 		</section>
