@@ -271,6 +271,9 @@ article .highcharts-container {width: 600px;}
 
 
 #pulled-data {display: inline-block; margin: 15px 2% 15px 155px; border-radius: 5px; background: #333; width: auto; padding: 10px 0;}
+
+#pulled-data h1 {color: #fff; font-size: 15px;}
+
 #pulled-data li {color: #fff; padding: 0 20px; margin: 0; list-style: none; line-height: 1.35;}
 
 #badges {border: 2px solid #eee; border-radius: 5px; display: inline-block; margin: 15px 2%; list-style: none; padding: 10px 20px; font-weight: 600; width: auto;}
