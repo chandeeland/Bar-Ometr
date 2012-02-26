@@ -18,7 +18,6 @@ class venue {
     public function addPerson(Person $p, $gid) {
         static $i = 0;
         if (empty($gid)) $gid = 'DEFAULT' . $i++;
-        echo $gid;
         $this->people[$gid][] = $p;
     }
 
