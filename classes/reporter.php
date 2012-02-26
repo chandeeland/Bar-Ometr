@@ -52,8 +52,10 @@ class venue {
         if (is_null($this->ratio)) {
             if  ($this->countMen() + $this->countWomen()) {
                 $this->ratio = round($this->countWomen() / ($this->countMen() + $this->countWomen()),2);
-            } $this->ratio = 0;
-        }
+            } else {
+		$this->ratio = 0;
+        	}
+		}
         return $this->ratio;
     }
 
@@ -81,7 +83,7 @@ class venue {
         if (is_null($this->glasses)) {
             $glasses = 0;
             foreach ($this->people as $group) {
-                $p = array_shift($group);
+                foreach ($group as $p);
                 if ($p->glasses) {
                     $glasses++;
                 }
