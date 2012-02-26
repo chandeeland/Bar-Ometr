@@ -102,20 +102,14 @@ if (isset($_REQUEST['q']) && $q = $_REQUEST['q']) {
 }     
 ?>
 
-<a href="http://face.com/" title="Face Recognition by face.com">
-<img width="80" src="http://static.face.com/badges/badge_5_light_bg.png" border="0" alt="Face Recognition by face.com">
-</a>
-<a href="http://foursquare.com">
-<img width="80" src="https://playfoursquare.s3.amazonaws.com/press/logo/poweredByFoursquare_gray.png">
-</a>
         </section>
 		
 		<footer>
 			<p>This was created by David Chan, Rodrigo Sanchez, Max Gribov&copy;2012</p>
 			<div class="powered-by">
-			
-			<a class="face-link" href="http://face.com/" title="Face Recognition by face.com"></a>
-			<a class="foursq-logo" href="http://foursquare.com" title="Foursquare"></a>
+				<a class="face-logo" href="http://face.com/" title="Face Recognition by face.com"></a>
+				<a class="foursq-logo" href="http://foursquare.com" title="Foursquare"></a>
+			</div>
 			
 		</footer>
 		
