@@ -170,7 +170,7 @@ strong { font-weight: bold; }
 /*
 / Site Styles 
 */
-header {background: #000; width: 100%; position: relative; padding: 5px 0}
+header {background: #000; width: 100%; position: relative; padding: 5px 0;}
 
 
 h1 a {
@@ -206,8 +206,22 @@ footer p {
 
 
 /* Results Page */
-#results-container { position: relative; margin: 0;
+#results-container { position: relative; margin: 0;}
+
+article.box.graph, article.box2.graph {
+    float: left;
+    margin: 2%;
+    max-width: 90%;
+    width: 100%;
 }
+
+article .highcharts-container {width: 600px;}
+
+
+#pulled-data {margin: 10px;}
+#pulled-data li {padding: 0 0 0 40px; margin: 0; list-style: none;}
+
+#badges {margin: 10px; list-style: none; padding: 0 0 0 40px; font-weight: 600;}
 
 header {position: relative;}
 header form.find {position: absolute; right: 10px; top: 10px;}
@@ -272,7 +286,3 @@ textarea[contenteditable] {-webkit-appearance: none;}
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }
 
-/* Contain floats: h5bp.com/q */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }

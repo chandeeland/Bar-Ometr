@@ -103,22 +103,22 @@ function pie_chart($title, $slices, $container = 'container') {
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="css/base.css" media="screen, handheld" />
-	<!--link rel="stylesheet" type="text/css" href="../html/css/mobile.css" media="only screen and (min-width: 320px)" />
-	<link rel="stylesheet" type="text/css" href="../html/css/desktop.css" media="only screen and (min-width: 720px)" /-->
+	<!--link rel="stylesheet" type="text/css" href="css/mobile.css" media="only screen and (min-width: 320px)" />
+	<link rel="stylesheet" type="text/css" href="css/desktop.css" media="only screen and (min-width: 720px)" /-->
 	
 	<!--[if IE]>
 		<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<link rel="stylesheet" type="text/css" href="../html/css/base.css" media="all" />
-		<link rel="stylesheet" type="text/css" href="../html/css/tweaks-IE.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/tweaks-IE.css" media="all" />
 	<![endif]-->
 	<!--[if IE 7]>
-		<link rel="stylesheet" type="text/css" href="../html/css/tweaks-IE7.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/tweaks-IE7.css" media="all" />
 	<![endif]-->
 	<!--[if IEMobile 7]>
 		<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<link rel="stylesheet" type="text/css" href="../html/css/base.css" media="all" />
-		<link rel="stylesheet" type="text/css" href="../html/css/mobile.css" media="all" />
-		<link rel="stylesheet" type="text/css" href="../html/css/tweaks-WP7.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/tweaks-WP7.css" media="all" />
 	<![endif]-->
 
 	<script src="js/libs/modernizr-2.5.0.min.js"></script>
