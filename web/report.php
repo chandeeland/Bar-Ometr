@@ -185,6 +185,10 @@ function pie_chart($title, $slices, $container = 'container') {
 			</section>
 	
 			<section id="badges">
+				<div class="badge-icons">
+					<img src="images/nerd-badge.png" alt="nerd badge" />
+					<img src="images/sausage-badge.png" alt="sausage badge" />
+				</div>
 				<?php
 				foreach ($report->getBadges() as $b) {
 					echo '<li>' . $b;
