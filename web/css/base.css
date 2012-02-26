@@ -202,7 +202,7 @@ h1 a:active {
     position: relative;
 	text-align: center;}
 	
-#what-we-do h2 {font-family: 'Satisfy', cursive; font-weight: 400; font-size: 24px;}
+#what-we-do h2 {font-family: 'Satisfy', cursive; font-weight: 400; font-size: 60px; padding: 45px 0 0 0;}
 
 article {background: #fff; border: solid 2px #CCC; border-radius: 5px; box-shadow: 0 3px 10px #000; float: left; margin: 2%; padding: 10px; width: 25%; max-width: 300px;}
 
@@ -220,7 +220,7 @@ img {border: 1px solid #ccc; border-radius: 5px; width: 100%; display: block; ma
 
 
 footer p {
-	position: absolute; padding: 10px;
+	position: absolute; bottom: 0; padding: 10px;
 }
 
 
@@ -249,8 +249,11 @@ article .highcharts-container {width: 600px;}
 header form.find {position: absolute; right: 20px; top: 20px;}
 header form.find input {border-radius: 5px; height: auto; font-size: 15px; padding: 8px 15px; color: #666;}
 header form.find input:focus {box-shadow: 0 1px 3px #CCC;}
-header form.find .button {background: #f00;border: none; border-right: 3px solid #720903; border-bottom: 3px solid #720903 ; border-radius: 5px; color: #fff; font-size: 18px; font-weight: 600; text-shadow: 0 1px 1px #000; padding: 8px; transition: background 0.25s ease-in; -webkit-transition: background 0.25s ease-in; -moz-transition: background 0.25s ease-in;}
-header form.find .button:hover {background: #A60000; text-shadow: none;}
+header form.find .button,
+#what-we-do form.find .button {background: #f00;border: none; border-right: 3px solid #720903; border-bottom: 3px solid #720903 ; border-radius: 5px; color: #fff; font-size: 18px; font-weight: 600; text-shadow: 0 1px 1px #000; padding: 8px; transition: background 0.25s ease-in; -webkit-transition: background 0.25s ease-in; -moz-transition: background 0.25s ease-in;}
+
+header form.find .button:hover,
+#what-we-do form.find .button:hover {background: #A60000; text-shadow: none;}
 
 
 

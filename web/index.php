@@ -60,8 +60,8 @@
 	
 		<header>
 			<h1 class="ir"><a href="">Co Name Here</a></h1>
-			<form class="find"  method="post" action="/index.php">
-				<label class=" visuallyhidden" for="findALocation">Find a Location's mood</label>
+			<form class="find visuallyhidden"  method="post" action="/index.php">
+				<label class="visuallyhidden" for="findALocation">Find a Location's mood</label>
 				<input name="q" id="findALocation" placeholder="Search a location's mood" />
 				<input class="button" type="submit" value="Go" />>
 			</form>
@@ -73,10 +73,10 @@
 			<h2>Header 2</h2>
 			<p>THis is where we will get people to buy in to input a location</p>
 		
-			<form class="find"  method="post" action="/index.php">
+			<form class="find" method="post" action="/index.php">
 				<label for="findALocation">Find a Location's mood</label>
 				<input name="q" id="findALocation" placeholder="Search a location's mood" />
-				<input class="button" type="submit" value="Go" />>
+				<input class="button" type="submit" value="Go" />
 			</form>
 		</section>
 		
