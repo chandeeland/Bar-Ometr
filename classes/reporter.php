@@ -50,7 +50,9 @@ class venue {
 
     public function getRatio() {
         if (is_null($this->ratio)) {
-            $this->ratio = round($this->countWomen() / ($this->countMen() + $this->countWomen()),2);
+            if  ($this->countMen() + $this->countWomen()) {
+                $this->ratio = round($this->countWomen() / ($this->countMen() + $this->countWomen()),2);
+            } $this->ratio = 0;
         }
         return $this->ratio;
     }
@@ -58,16 +60,24 @@ class venue {
     // average confidence in the male gender
     public function getManly() {
         $m = $this->countMen();
-        return round($this->men_c / $m / 100,2);
+        if ($m > 0) {
+            return round($this->men_c / $m / 100,2);
+        } 
+        return 0;
     }
     
     // average confidence in the female gender
     public function getGirly() {
         $w = $this->countWomen();
-        return round($this->women_c / $w / 100,2);
+        if ($w > 0) {
+            return round($this->women_c / $w / 100,2);
+        }
+        return 0;
     }
 
     public function getNerdly() {
+        if (!(count($this->people) > 0)) return 0;
+
         if (is_null($this->glasses)) {
             $glasses = 0;
             foreach ($this->people as $group) {
@@ -101,9 +111,12 @@ class venue {
         }
 
         foreach ($moods as $k => $m) {
-            $mood_percent[$k] = round($m/$total,2);
+            if ($total > 0 ) {
+                $mood_percent[$k] = round($m/$total,2);
+            } else {
+                $mood_percent[$k] = 0;
+            }
         }
-
         return $mood_percent;
     }
 
