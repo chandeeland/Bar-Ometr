@@ -170,37 +170,51 @@ strong { font-weight: bold; }
 /*
 / Site Styles 
 */
-
+header {background: #000; width: 100%; position: relative; padding: 5px 0}
 
 
 h1 a {
 	display: block;
 	background: url('../images/logo-test.png') no-repeat 0 0 #333;
 	height: 100px;
-	width: 320px;}
+	margin: 0 10px;
+	width: 320px;
+}
 	
 h1 a:hover,
 h1 a:active {
 }
 
-article {background: #fff; border: solid 2px #CCC; border-radius: 5px; box-shadow: 0 3px 10px #000; float: left; margin: 25px; padding: 10px; width: 25%; max-width: 300px;	}
+article {background: #fff; border: solid 2px #CCC; border-radius: 5px; box-shadow: 0 3px 10px #000; float: left; margin: 2%; padding: 10px; width: 25%; max-width: 300px;}
 
+article a {transition: opacity 0.25s ease-in; -webkit-transition: opacity 0.25s ease-in; -moz-transition: opacity 0.25s ease-in;}
+	
+	
+
+article a:hover,
+article a:focus {
+opacity: .75;
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+	filter: alpha(opacity=75);}
+	
 img {border: 1px solid #ccc; border-radius: 5px; width: 100%; display: block; max-width: 100%;}
 
 
-
+footer p {
+	margin: 10px;
+}
 
 
 /* Results Page */
-#results-container { position: relative; margin: 0 25px;
+#results-container { position: relative; margin: 0;
 }
 
 header {position: relative;}
 header form.find {position: absolute; right: 10px; top: 10px;}
 header form.find input {border-radius: 5px; padding: 8px 15px; color: #666;}
 header form.find input:focus {box-shadow: 0 1px 3px #CCC;}
-header form.find button {background: #f00;border: none; border-right: 3px solid #720903; border-bottom: 3px solid #720903 ; border-radius: 5px; color: #fff; font-size: 18px; font-weight: 600; text-shadow: 0 1px 1px #000; padding: 5px;}
-header form.find button:hover {background: #A60000;}
+header form.find button {background: #f00;border: none; border-right: 3px solid #720903; border-bottom: 3px solid #720903 ; border-radius: 5px; color: #fff; font-size: 18px; font-weight: 600; text-shadow: 0 1px 1px #000; padding: 5px; transition: background 0.25s ease-in; -webkit-transition: background 0.25s ease-in; -moz-transition: background 0.25s ease-in;}
+header form.find button:hover {background: #A60000; text-shadow: none;}
 
 
 
