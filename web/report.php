@@ -26,7 +26,7 @@ if (array_key_exists('v', $_REQUEST)) {
     
     $_SESSION['pics'] = $pics;
     $_SESSION['report'] = $report;
-    $_SESSION['qname'] = $_REQUEST['qname'];
+    $_SESSION['qname'] = $qname = $_REQUEST['qname'];
 
 } else if (array_key_exists('pics', $_SESSION)) {
     $pics = $_SESSION['pics'];
@@ -176,6 +176,7 @@ function pie_chart($title, $slices, $container = 'container') {
 		<section id="results-container" class="clearfix">
 		
 			<section id="pulled-data">
+			    <h1 class=""><?= $qname; ?></h1>
 				<?php $report->stats(); ?>
 			</section>
 	
