@@ -54,7 +54,7 @@ class venue {
                 $this->ratio = round($this->countWomen() / ($this->countMen() + $this->countWomen()),2);
             } else {
 		$this->ratio = 0;
-        	}
+            }
 		}
         return $this->ratio;
     }
@@ -133,7 +133,7 @@ class venue {
     public function getBadges() {
         $pm = $this->getMood();
         $badges = array();
-        if ($this->getRatio() < 0.5 and count($this->people) > 4) {
+        if ($this->getRatio() < 0.3 and count($this->people) > 4) {
             $badges[] = 'Sausage Fest';
             
             if (array_key_exists('sad', $pm) && array_key_exists('surprised', $pm))
@@ -144,7 +144,11 @@ class venue {
             $badges[] = 'Ladies Night';
         }
 
-        if ($this->getNerdly() > .3) {
+	if (array_key_exists('neutral', $pm) && $pm['neutral'] = 1) {
+            $badges[] = 'Meh.';
+	}
+        
+	if ($this->getNerdly() > .3) {
             $badges[] = 'Nerd Alert';
         }
         if ($this->getManly() < .5 && $this->getNerdly() > .5) {
@@ -163,6 +167,8 @@ class venue {
 
         if (array_key_exists('happy', $pm))
         if ($pm['happy'] > .4) {
+            $badges[] = 'Looks like fun';
+        } else if ($pm['happy'] > .8) {
             $badges[] = 'Happy Happy Joy Joy!';
         }
 
