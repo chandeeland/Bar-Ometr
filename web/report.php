@@ -70,7 +70,10 @@ function pie_chart($title, $slices, $container = 'container') {
 var chart;
 <?php
 echo pie_chart('Overall Mood', $report->getMood(), 'container');
-echo pie_chart('Gender Ratio', array('Men'=> $report->men, 'Women' => $report->women, '???'=> ($report->population - ($report->men + $report->women))),'container2');
+echo pie_chart('Gender Ratio', array('Men'=> $report->countMen(),
+            'Women' => $report->countWomen(),
+            //'???'=> (count($report->people) - ($report->countMen() + $report->countWomen())),
+            ),'container2');
 ?>
 		</script>
 	</head>

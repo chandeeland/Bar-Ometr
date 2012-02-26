@@ -67,14 +67,33 @@
 			<h2>Header 2</h2>
 			<p>THis is where we will get people to buy in to input a location</p>
 		
-			<form>
+			<form method="post" action="/index.php">
 				<label for="findALocation">Find a Location</label>
-				<input placehoulder="" />
+				<input name="q" id="findALocation" />
 				<button>Go<!-- icon --></button>
 			</form>
 		</section>
 		
-		
+		<section>
+<?php
+require('../classes/scraper/foursquare.php');
+
+if (isset($_REQUEST['q']) && $q = $_REQUEST['q']) {
+    $scrape = new foursquare();
+    $venues = $scrape->search_venue('40.7,-74', $_REQUEST['q'], 10);
+
+    foreach($venues as $k => $v) {
+        $name = $v['name'];
+	if (isset($v['categories'][0]))
+       	 	$cat =  $v['categories'][0]['name'];
+        $pics = urlencode(serialize($scrape->get_photos($venues[$k]['id'])));
+        
+        echo "<li><a href=\"/report.php?v=$pics\">$name ($cat) </a>\n";
+    }
+
+}     
+?>
+        </section>
 		
 		<footer>
 			<p>This was created by &copy;2012</p>
