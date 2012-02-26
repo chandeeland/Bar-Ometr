@@ -158,14 +158,15 @@ function pie_chart($title, $slices, $container = 'container') {
 	
 		<header>
 			<h1 class="ir"><a href=""><?= $qname; ?></a></h1>
-			<form class="find">
+			<form class="find"  method="post" action="/index.php">
 				<label class=" visuallyhidden" for="findALocation">Find a Location's mood</label>
-				<input placeholder="Search a location" />
+				<input name="q" id="findALocation" placeholder="Search a location's mood" />
 				<button>Go<!-- icon --></button>
 			</form>
+			
 		</header>
 
-        <section>
+        <section id="pulled-data">
     	    <?php $report->stats(); ?>
         </section>
 
@@ -214,9 +215,7 @@ function pie_chart($title, $slices, $container = 'container') {
 		</footer>
 		
 	</div>
-	
-	<!-- JavaScript at the bottom for fast page loading -->
-	
+		
 
 </body>
 </html>
