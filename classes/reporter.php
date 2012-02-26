@@ -142,6 +142,9 @@ class venue {
             $badges[] = 'Ladies Night';
         }
 
+        if ($this->getNerdly() > .3) {
+            $badges[] = 'Nerd Alert';
+        }
         if ($this->getManly() < .5 && $this->getNerdly() > .5) {
             $badges[] = 'Warning! Hipster Central';
         }
