@@ -161,7 +161,7 @@ function pie_chart($title, $slices, $container = 'container') {
 			<form class="find"  method="post" action="/index.php">
 				<label class=" visuallyhidden" for="findALocation">Find a Location's mood</label>
 				<input name="q" id="findALocation" placeholder="Search a location's mood" />
-				<button>Go<!-- icon --></button>
+				<input class="button" type="submit" value="Go" />>
 			</form>
 			
 		</header>

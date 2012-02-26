@@ -59,23 +59,23 @@
 	
 		<header>
 			<h1 class="ir"><a href="">Co Name Here</a></h1>
-			<form class="find">
+			<form class="find"  method="post" action="/index.php">
 				<label class=" visuallyhidden" for="findALocation">Find a Location's mood</label>
-				<input placeholder="Search a location's mood" />
-				<button>Go<!-- icon --></button>
+				<input name="q" id="findALocation" placeholder="Search a location's mood" />
+				<input class="button" type="submit" value="Go" />>
 			</form>
 		</header>
 		
 		
 		
-		<section>
+		<section id="what-we-do">
 			<h2>Header 2</h2>
 			<p>THis is where we will get people to buy in to input a location</p>
 		
-			<form method="post" action="/index.php">
-				<label for="findALocation">Find a Location</label>
-				<input name="q" id="findALocation" />
-				<button>Go<!-- icon --></button>
+			<form class="find"  method="post" action="/index.php">
+				<label for="findALocation">Find a Location's mood</label>
+				<input name="q" id="findALocation" placeholder="Search a location's mood" />
+				<input class="button" type="submit" value="Go" />>
 			</form>
 		</section>
 		
