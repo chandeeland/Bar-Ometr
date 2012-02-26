@@ -96,7 +96,7 @@ if (isset($_REQUEST['q']) && $q = $_REQUEST['q']) {
        	 	$qname .= " ({$v['categories'][0]['name']})";
         }
         $pics = urlencode(serialize($scrape->get_photos($venues[$k]['id'])));
-        echo "<li><a href=\"/report.php?v=$pics&qname=$qname\">$qname </a>\n";
+        echo "<li><a href=\"/report.php?v=$pics&qname=".urlencode($qname)."\">$qname </a>\n";
     }
 
 }     

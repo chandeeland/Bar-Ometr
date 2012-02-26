@@ -26,7 +26,7 @@ if (array_key_exists('v', $_REQUEST)) {
     
     $_SESSION['pics'] = $pics;
     $_SESSION['report'] = $report;
-    $_SESSION['qname'] = $qname = $_REQUEST['qname'];
+    $_SESSION['qname'] = $qname = htmlspecialchars($_REQUEST['qname']);
 
 } else if (array_key_exists('pics', $_SESSION)) {
     $pics = $_SESSION['pics'];
