@@ -232,9 +232,17 @@ footer p {
 
 .powered-by {position: relative; float: right;}
 
-footer a.face-logo {background: url ('http://static.face.com/badges/badge_5_light_bg.png') no-repeat 0 0; display: inline-block; width: 100px; height: 50px;}
+footer a.face-logo {background: url("http://static.face.com/badges/badge_5_light_bg.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+}
 
-footer a.foursq-logo {background: url ('https://playfoursquare.s3.amazonaws.com/press/logo/poweredByFoursquare_gray.png') no-repeat 0 0; display: inline-block; width: 100px; height: 50px;}
+footer a.foursq-logo {background: url("https://playfoursquare.s3.amazonaws.com/press/logo/poweredByFoursquare_gray.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 93px;
+    width: 482px;
+}
 
 /* Results Page */
 #results-container {
