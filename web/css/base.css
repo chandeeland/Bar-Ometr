@@ -282,8 +282,8 @@ header form.find .button:hover,
 	padding: 10px 2% 30px;
 }
 
-#scrape-me {display: inline; margin: 0 auto; width: 100%;}
-#scrape-me li {line-height: 1.35;list-style: none; padding: 0; margin: 0;}
+#scrape-me {display: inline; margin: 0 auto; text-align: center; width: 100%;}
+#scrape-me li {line-height: 1.35; list-style: none; padding: 0; margin: 0;}
 #scrape-me li a {text-decoration: none;}
 #scrape-me li a:hover {color:#2255CC;text-decoration: underline;}
 
