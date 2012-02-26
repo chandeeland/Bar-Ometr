@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* Desktop CSS Document */
+
+/* 4. 4 Column Grid 720px - 959px 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 720px) and (max-width: 959px) {
+	.row {
+		
+	}
+	.span_1, .span_2, .span_3, .span_4 {
+		margin-left:2%;
+		
+		padding:0 1.5%;
+	}
+	
+	.span_1:first-child, .span_2:first-child, .span_3:first-child, .span_4:first-child, .span_first_child {
+		margin-left:0;
+	}
+	
+	.span_1 {
+		width:23.5%;
+	}
+	.span_2 {
+		width:49.0%;
+	}
+	.span_3 {
+		width:74.5%;
+	}
+	.span_4 {
+		width:100%;
+	}
+} /* // min_width: 720px */ 
+
+
+
+/* 5. 5 Column Grid 960px - 1199px 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+	.row {
+		
+	}
+	.span_1, .span_2, .span_3, .span_4, .span_5 {
+		margin-left:2%;
+		padding:0 1.5%;
+	}
+	
+	.span_1:first-child, .span_2:first-child, .span_3:first-child, .span_4:first-child, .span_5:first-child, .span_first_child {
+		margin-left:0;
+	}
+	
+	.span_1 {
+		width:18.4%;
+	}
+	.span_2 {
+		width:38.8%;
+	}
+	.span_3 {
+		width:59.2%;
+	}
+	.span_4 {
+		width:79.6%;
+	}
+	.span_5 {
+		width:100%;
+	}
+} /* // min_width: 960px */ 
+
+
+
+/* 6. 6 Column Grid 1200px - Infinity 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 1200px) {
+	.row {
+		
+	}
+	.span_1, .span_2, .span_3, .span_4, .span_5, .span_6 {
+		margin-left:2%;
+		
+		padding:0 1.5%;
+	}
+	
+	.span_1:first-child, .span_2:first-child, .span_3:first-child, .span_4:first-child, .span_5:first-child, .span_6:first-child, .span_first_child {
+		margin-left:0;
+	}
+	
+	.span_1 {
+		width:15.0%;
+	}
+	.span_2 {
+		width:32.0%;
+	}
+	.span_3 {
+		width:49.0%;
+	}
+	.span_4 {
+		width:66.0%;
+	}
+	.span_5 {
+		width:83.0%;
+	}
+	.span_6 {
+		width:100%;
+	}
+} /* // min_width: 1200px */ 
