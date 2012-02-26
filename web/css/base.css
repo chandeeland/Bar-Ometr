@@ -201,7 +201,7 @@ img {border: 1px solid #ccc; border-radius: 5px; width: 100%; display: block; ma
 
 
 footer p {
-	margin: 10px;
+	position: absolute; margin: 10px;
 }
 
 
@@ -218,16 +218,16 @@ article.box.graph, article.box2.graph {
 article .highcharts-container {width: 600px;}
 
 
-#pulled-data {margin: 10px;}
-#pulled-data li {padding: 0 0 0 40px; margin: 0; list-style: none;}
+#pulled-data {display: inline-block; margin: 15px 2%; border-radius: 5px; background: #333; width: auto; padding: 10px 0;}
+#pulled-data li {color: #fff; padding: 0 20px; margin: 0; list-style: none; line-height: 1.35;}
 
-#badges {margin: 10px; list-style: none; padding: 0 0 0 40px; font-weight: 600;}
+#badges {border: 2px solid #eee; border-radius: 5px; display: inline-block; margin: 15px 2%; list-style: none; padding: 10px 20px; font-weight: 600; width: auto;}
 
 header {position: relative;}
-header form.find {position: absolute; right: 10px; top: 10px;}
-header form.find input {border-radius: 5px; padding: 8px 15px; color: #666;}
+header form.find {position: absolute; right: 20px; top: 20px;}
+header form.find input {border-radius: 5px; font-size: 15px; padding: 8px 15px; color: #666;}
 header form.find input:focus {box-shadow: 0 1px 3px #CCC;}
-header form.find button {background: #f00;border: none; border-right: 3px solid #720903; border-bottom: 3px solid #720903 ; border-radius: 5px; color: #fff; font-size: 18px; font-weight: 600; text-shadow: 0 1px 1px #000; padding: 5px; transition: background 0.25s ease-in; -webkit-transition: background 0.25s ease-in; -moz-transition: background 0.25s ease-in;}
+header form.find button {background: #f00;border: none; border-right: 3px solid #720903; border-bottom: 3px solid #720903 ; border-radius: 5px; color: #fff; font-size: 18px; font-weight: 600; text-shadow: 0 1px 1px #000; padding: 8px; transition: background 0.25s ease-in; -webkit-transition: background 0.25s ease-in; -moz-transition: background 0.25s ease-in;}
 header form.find button:hover {background: #A60000; text-shadow: none;}
 
 
