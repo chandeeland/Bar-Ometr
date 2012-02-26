@@ -225,10 +225,15 @@ opacity: .75;
 	
 img {border: 1px solid #ccc; border-radius: 5px; width: 100%; display: block; max-width: 100%;}
 
-footer {position: absolute; bottom: 0;}
+footer { padding: 100px 0 0;
+    width: 100%;
+}
 
 footer p {
+	float: left;
 	position: padding: 10px;
+	display: inline;
+	width: auto;
 }
 
 .powered-by {position: relative; float: right;}
