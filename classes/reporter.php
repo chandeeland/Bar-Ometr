@@ -160,14 +160,3 @@ class venue {
     }
 }
 
-$report = new Venue();
-$face = new FaceRestClient('67afa8236381726623decc8f17e909dc','74b08f0899251135728e83bd172135e8');
-$info = $face->faces_detect($pics);
-
-foreach ($info->photos as $photo) {
-    $report->population += count($photo->tags);
-    foreach ($photo->tags as $tag) {
-        $report->addPerson(new Person($tag->attributes));
-    }
-}
-

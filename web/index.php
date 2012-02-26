@@ -83,12 +83,12 @@ if (isset($_REQUEST['q']) && $q = $_REQUEST['q']) {
     $venues = $scrape->search_venue('40.7,-74', $_REQUEST['q'], 10);
 
     foreach($venues as $k => $v) {
-        $name = $v['name'];
-	if (isset($v['categories'][0]))
-       	 	$cat =  $v['categories'][0]['name'];
+        $qname = $v['name'];
+    	if (isset($v['categories'][0])) {
+       	 	$qname .= " ({$v['categories'][0]['name']})";
+        }
         $pics = urlencode(serialize($scrape->get_photos($venues[$k]['id'])));
-        
-        echo "<li><a href=\"/report.php?v=$pics\">$name ($cat) </a>\n";
+        echo "<li><a href=\"/report.php?v=$pics&qname=$qname\">$qname </a>\n";
     }
 
 }     
