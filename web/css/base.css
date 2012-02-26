@@ -219,9 +219,20 @@ article a {transition: opacity 0.25s ease-in; -webkit-transition: opacity 0.25s 
 
 	
 #badges .badge-icons img {
-	height: 75px;
-	position: absolute;
-	top: -75px;
+	border: none;
+    height: 75px;
+    position: absolute;
+    top: -90px;
+    width: 75px;
+}
+
+#badges .badge-icons img + img {
+	border: none;
+    height: 75px;
+    position: absolute;
+    top: -90px;
+	left: 90px;
+    width: 75px;
 }
 
 article a:hover,
