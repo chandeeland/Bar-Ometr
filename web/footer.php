@@ -4,7 +4,7 @@
 			<div class="powered-by">
 				<a class="face-logo" href="http://face.com/" title="Face Recognition by face.com"></a>
 				<a class="foursq-logo" href="http://foursquare.com" title="Foursquare"></a>
-				<a class="aviary-logo" href="http://aviary.com"></a>
+				<a class="aviary-logo" href="http://aviary.com" title="Aviary"></a>
 			</div>
 		</footer>
 		
