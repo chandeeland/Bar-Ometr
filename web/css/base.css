@@ -272,7 +272,13 @@ article .highcharts-container {width: 600px;}
 
 #pulled-data {display: inline-block; margin: 15px 2% 15px 155px; border-radius: 5px; background: #333; width: auto; padding: 10px 0;}
 
-#pulled-data h1 {color: #fff; font-size: 15px;}
+#pulled-data h1 {
+	color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0 10px 0 20px;
+    width: 80%;
+}
 
 #pulled-data li {color: #fff; padding: 0 20px; margin: 0; list-style: none; line-height: 1.35;}
 
