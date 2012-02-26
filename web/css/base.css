@@ -275,11 +275,11 @@ footer a.foursq-logo {
 }
 
 footer a.aviary-logo {
-	background: url ('../images/www.aviary.png') no-repeat 0 0;
-	display: inline-block;
-	height: 33px
-	margin: 0 10px;
-	width: 83px;
+	background: url("../images/www.aviary.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 33px;
+    margin: 0 10px;
+    width: 83px;
 }
 
 /* Results Page */
