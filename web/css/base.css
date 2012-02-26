@@ -225,6 +225,7 @@ opacity: .75;
 	
 img {border: 1px solid #ccc; border-radius: 5px; width: 100%; display: block; max-width: 100%;}
 
+footer {position: absolute; bottom: 0;}
 
 footer p {
 	position: absolute; bottom: 0; padding: 10px;
@@ -232,16 +233,19 @@ footer p {
 
 .powered-by {position: relative; float: right;}
 
-footer a.face-logo {background: url("http://static.face.com/badges/badge_5_light_bg.png") no-repeat scroll 0 0 transparent;
+footer a.face-logo {
+	background: url("http://static.face.com/badges/badge_5_light_bg.png") no-repeat scroll 0 0 transparent;
     display: inline-block;
-    height: 50px;
-    width: 100px;
+    height: 36px;
+    width: 126px;
 }
 
-footer a.foursq-logo {background: url("https://playfoursquare.s3.amazonaws.com/press/logo/poweredByFoursquare_36x36.png") no-repeat scroll 0 0 transparent;
+footer a.foursq-logo {
+	background: url("https://playfoursquare.s3.amazonaws.com/press/logo/poweredByFoursquare_36x36.png") no-repeat scroll 0 0 transparent;
     display: inline-block;
-    height: 93px;
-    width: 482px;
+    height: 36px;
+    margin: 0 10px;
+    width: 36px;
 }
 
 /* Results Page */
