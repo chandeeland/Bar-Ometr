@@ -210,8 +210,12 @@ function pie_chart($title, $slices, $container = 'container') {
 	
 			<section id="badges">
 				<div class="badge-icons">
+                    <?php if (in_array('Nerd Alert', $report->getBadges())) : ?>
 					<img src="images/nerd-badge.png" alt="nerd badge" />
+                    <?php endif; ?>
+                    <?php if (in_array('Sausage Fest', $report->getBadges())) : ?>
 					<img src="images/sausage-badge.png" alt="sausage badge" />
+                    <?php endif; ?>
 				</div>
 				<?php
 				foreach ($report->getBadges() as $b) {
