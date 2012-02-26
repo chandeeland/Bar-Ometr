@@ -172,6 +172,7 @@ function pie_chart($title, $slices, $container = 'container') {
         });
 
         function launchEditor(id, src) {
+	    scroll(0,0);
             featherEditor.launch({
                 image: id,
                 url: src
