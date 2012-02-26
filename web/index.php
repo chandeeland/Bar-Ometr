@@ -102,16 +102,8 @@ if (isset($_REQUEST['q']) && $q = $_REQUEST['q']) {
 }     
 ?>
         </section>
-		
-		<footer>
-			<p>This was created by David Chan, Rodrigo Sanchez, Max Gribov&copy;2012</p>
-			<div class="powered-by">
-				<a class="face-logo" href="http://face.com/" title="Face Recognition by face.com"></a>
-				<a class="foursq-logo" href="http://foursquare.com" title="Foursquare"></a>
-			</div>
-		</footer>
-		
-	</div>
+<?php require 'footer.php'; ?>
+		</div>
 	
 	<!-- JavaScript at the bottom for fast page loading -->
 	

@@ -217,10 +217,7 @@ function pie_chart($title, $slices, $container = 'container') {
 			</div>
 		</section>
 		
-		<footer>
-			<p>This was created by &copy;2012</p>
-		</footer>
-		
+		<?php require 'footer.php'; ?>
 	</div>
 		
 
