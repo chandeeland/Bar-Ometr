@@ -117,7 +117,7 @@ function pie_chart($title, $slices, $container = 'container') {
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="css/base.css" media="screen, handheld" />
-	<!--link rel="stylesheet" type="text/css" href="css/mobile.css" media="only screen and (min-width: 320px)" />
+	<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>	<!--link rel="stylesheet" type="text/css" href="css/mobile.css" media="only screen and (min-width: 320px)" />
 	<link rel="stylesheet" type="text/css" href="css/desktop.css" media="only screen and (min-width: 720px)" /-->
 	
 	<!--[if IE]>
