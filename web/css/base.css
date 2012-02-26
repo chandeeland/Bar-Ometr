@@ -241,7 +241,7 @@ opacity: .75;
 -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
 	filter: alpha(opacity=75);}
 	
-article p {margin: 0;}
+article p {margin: 0; line-height: 0;}
 	
 img {border: 1px solid #ccc; border-radius: 5px; width: 100%; display: block; max-width: 100%;}
 
@@ -272,6 +272,14 @@ footer a.foursq-logo {
     height: 36px;
     margin: 0 10px;
     width: 36px;
+}
+
+footer a.aviary-logo {
+	background: url ('../images/www.aviary.png') no-repeat 0 0;
+	display: inline-block;
+	height: 33px
+	margin: 0 10px;
+	width: 83px;
 }
 
 /* Results Page */
